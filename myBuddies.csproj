@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8125270A-4D82-4E64-9CD9-344FB1E71B09}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myBuddies</RootNamespace>
+    <AssemblyName>myBuddies</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>myBuddies.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>myBuddies.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30422.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Farseer Physics 3.0 WinPhone, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Physics Helper\Physics Helper Library\WP7\Farseer Physics 3.0 WinPhone.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile" />
+    <Reference Include="Microsoft.Advertising.Mobile.UI" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices" />
+    <Reference Include="Spritehand.FarseerHelper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Physics Helper\Physics Helper Library\WP7\Spritehand.FarseerHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Spritehand.PhysicsBehaviors, Version=4.0.0.1, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Physics Helper\Physics Helper Library\WP7\Spritehand.PhysicsBehaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AndionChurchFightxaml.xaml.cs">
+      <DependentUpon>AndionChurchFightxaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AndionFightTrain.xaml.cs">
+      <DependentUpon>AndionFightTrain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BossFightsQuests.xaml.cs">
+      <DependentUpon>BossFightsQuests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EggnonChurchFight.xaml.cs">
+      <DependentUpon>EggnonChurchFight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EggnonTrainFight1.xaml.cs">
+      <DependentUpon>EggnonTrainFight1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EggnonTrainFight2.xaml.cs">
+      <DependentUpon>EggnonTrainFight2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FightLevel1.xaml.cs">
+      <DependentUpon>FightLevel1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreen.xaml.cs">
+      <DependentUpon>HomeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IsoStorage.cs" />
+    <Compile Include="Lord Ovouon.xaml.cs">
+      <DependentUpon>Lord Ovouon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObarChurchBoss.xaml.cs">
+      <DependentUpon>ObarChurchBoss.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObarChurchBossFight.xaml.cs">
+      <DependentUpon>ObarChurchBossFight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObarChurchCreatures.xaml.cs">
+      <DependentUpon>ObarChurchCreatures.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObarChurchCreaturesIceandFireWizards.xaml.cs">
+      <DependentUpon>ObarChurchCreaturesIceandFireWizards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="The End.xaml.cs">
+      <DependentUpon>The End.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WalkingAndion.xaml.cs">
+      <DependentUpon>WalkingAndion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WalkingEggnon.xaml.cs">
+      <DependentUpon>WalkingEggnon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WalkingObar.xaml.cs">
+      <DependentUpon>WalkingObar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page1AfterHomeScreen.xaml.cs">
+      <DependentUpon>Page1AfterHomeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page2.xaml.cs">
+      <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PetsHome.xaml.cs">
+      <DependentUpon>PetsHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="WalkingTheWorld.xaml.cs">
+      <DependentUpon>WalkingTheWorld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorldMap.xaml.cs">
+      <DependentUpon>WorldMap.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pics\WorldMapDarkWorld.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Air Prelude.mp3" />
+    <Content Include="Sounds\Alarm.mp3" />
+    <Content Include="Sounds\Arcadia.mp3" />
+    <Content Include="Sounds\DarkMatter.wav" />
+    <Content Include="Sounds\Earth.wav" />
+    <Content Include="Sounds\FallenAngel.wav" />
+    <Content Include="Sounds\FightSong.mp3" />
+    <Content Include="Sounds\MainMenu.mp3" />
+    <Content Include="Sounds\FallenAngels.mp3" />
+    <Content Include="Sounds\FireBallAttack.wav" />
+    <Content Include="Sounds\GunShotWithShell.wav" />
+    <Content Include="Sounds\Ice.wav" />
+    <Content Include="Sounds\Inferno.wav" />
+    <Content Include="Sounds\Intro.mp3" />
+    <Content Include="Sounds\LightningAttack.wav" />
+    <Content Include="Sounds\Quake.wav" />
+    <Content Include="Sounds\Scene2.mp3" />
+    <Content Include="Sounds\Serpentine Trek.mp3" />
+    <Content Include="Sounds\smallExplosion.wav" />
+    <Content Include="Sounds\SpiritAttack1.wav" />
+    <Content Include="Sounds\SpiritAttack2.wav" />
+    <Content Include="Sounds\SuperNatural.mp3" />
+    <Content Include="Sounds\The Chamber.mp3" />
+    <Content Include="Sounds\Thunder.wav" />
+    <Content Include="Sounds\We Got Trouble.mp3" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AndionChurchFightxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AndionFightTrain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BossFightsQuests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EggnonChurchFight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EggnonTrainFight1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EggnonTrainFight2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FightLevel1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lord Ovouon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObarChurchBoss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObarChurchBossFight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObarChurchCreatures.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ObarChurchCreaturesIceandFireWizards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="The End.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WalkingAndion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WalkingEggnon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WalkingObar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page1AfterHomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PetsHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WalkingTheWorld.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorldMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BattleCat_Images\Layer 2.png" />
+    <Resource Include="BattleCat_Images\BattleDog_Images\Layer 1.png" />
+    <Resource Include="BattleRobot_Images\Shape 98.png" />
+    <Resource Include="BattleTurtle_Images\Layer 1.png" />
+    <Resource Include="BattleZombie_Images\Layer 10.png" />
+    <Resource Include="BattleZombie_Images\Layer 9.png" />
+    <Resource Include="blood_Images\Layer 1.png" />
+    <Resource Include="blood_Images\Layer 2.png" />
+    <Resource Include="blood_Images\Layer 3.png" />
+    <Resource Include="blood_Images\Layer 4.png" />
+    <BlendEmbeddedFont Include="Fonts\MTCORSVA.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Characters>
+      </Characters>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
+    <Resource Include="Item_Images\Layer 1.png" />
+    <Resource Include="monkeyBattle_Images\Layer 1.png" />
+    <Resource Include="Pics\2ndSpells\Blizzard.png" />
+    <Resource Include="Pics\2ndSpells\CureAllAngel.png" />
+    <Resource Include="Pics\2ndSpells\DarkMatter.png" />
+    <Resource Include="Pics\2ndSpells\EarthRock1.png" />
+    <Resource Include="Pics\2ndSpells\EarthRock2.png" />
+    <Resource Include="Pics\2ndSpells\FallenAngels.png" />
+    <Resource Include="Pics\2ndSpells\Inferno.png" />
+    <Resource Include="Pics\2ndSpells\PoisonSpell_Images\PoisonSmoke1.png" />
+    <Resource Include="Pics\2ndSpells\PoisonSpell_Images\PoisonSmoke2.png" />
+    <Resource Include="Pics\2ndSpells\PoisonSpell_Images\PoisonSmoke3.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\Cloud1.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\Cloud1purp.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\cloud2.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\cloud2purp.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\Cloud3.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\cloud3purp.png" />
+    <Resource Include="Pics\2ndSpells\Thunder_Images\ThunderBolt.png" />
+    <Resource Include="Pics\Armgrab.png" />
+    <Resource Include="Pics\ArmgrabClose.png" />
+    <Resource Include="Pics\BulletShell.png" />
+    <Resource Include="Pics\CharacterFront.png" />
+    <Resource Include="Pics\Characters\Eli.png" />
+    <Resource Include="Pics\Characters\FallenMerc1.png" />
+    <Resource Include="Pics\Characters\MasterAdalmun.png" />
+    <Resource Include="Pics\Characters\Nevi.png" />
+    <Resource Include="Pics\Characters\Student1John.png" />
+    <Resource Include="Pics\Characters\student2Pat.png" />
+    <Resource Include="Pics\Characters\TalkingEli.png" />
+    <Resource Include="Pics\Characters\TalkingNevi.png" />
+    <Resource Include="Pics\Characters\VIIVoicesSpeaking.png" />
+    <Resource Include="Pics\CutScenes\Scene0.5.png" />
+    <Resource Include="Pics\CutScenes\Scene1.1.png" />
+    <Resource Include="Pics\CutScenes\Scene1.png" />
+    <Resource Include="Pics\CutScenes\Scene2.png" />
+    <Resource Include="Pics\CutScenes\Scene3.png" />
+    <Resource Include="Pics\CutScenes\Scene4.1.png" />
+    <Resource Include="Pics\CutScenes\Scene5.png" />
+    <Resource Include="Pics\CutScenes\Scene6.png" />
+    <Resource Include="Pics\CutScenes\Scene8.png" />
+    <Resource Include="Pics\CutScenes\Stage7.png" />
+    <Resource Include="Pics\Enemies\Blob.png" />
+    <Resource Include="Pics\Enemies\BossObar.png" />
+    <Resource Include="Pics\Enemies\EvilButterfly.png" />
+    <Resource Include="Pics\Enemies\Eye.png" />
+    <Resource Include="Pics\Enemies\EyeBlob.png" />
+    <Resource Include="Pics\Enemies\FallenMerc1.png" />
+    <Resource Include="Pics\Enemies\FireBallEnemy.png" />
+    <Resource Include="Pics\Enemies\FireWizard.png" />
+    <Resource Include="Pics\Enemies\IceWizard.png" />
+    <Resource Include="Pics\Enemies\kego.png" />
+    <Resource Include="Pics\Enemies\Lord Ovouon.png" />
+    <Resource Include="Pics\Enemies\Orc.png" />
+    <Resource Include="Pics\Enemies\pickie.png" />
+    <Resource Include="Pics\Enemies\smallgoblin.png" />
+    <Resource Include="Pics\Enemies\Snail.png" />
+    <Resource Include="Pics\Enemies\snug.png" />
+    <Resource Include="Pics\Enemies\spider.png" />
+    <Resource Include="Pics\EnemyAttacks\RobotAttack.png" />
+    <Resource Include="Pics\EnemyAttacks\ZombieAttack.png" />
+    <Resource Include="Pics\eyes.png" />
+    <Resource Include="Pics\Fight.png" />
+    <Resource Include="Pics\fightgoingbetweenTowns1.png" />
+    <Resource Include="Pics\fingerChoice.png" />
+    <Resource Include="Pics\FireBall.png" />
+    <Resource Include="Pics\FirstPersonGunView2.png" />
+    <Resource Include="Pics\FlashFromGun.png" />
+    <Resource Include="Pics\Gun.png" />
+    <Resource Include="Pics\hood.png" />
+    <Resource Include="Pics\ice1.png" />
+    <Resource Include="Pics\ice2.png" />
+    <Resource Include="Pics\LeftArmHandGun1.png" />
+    <Resource Include="Pics\Light.png" />
+    <Resource Include="Pics\Lighting.png" />
+    <Resource Include="Pics\MoveLeft.png" />
+    <Resource Include="Pics\MoveRight.png" />
+    <Resource Include="Pics\Profile.png" />
+    <Resource Include="Pics\Quake.png" />
+    <Resource Include="Pics\Shield.png" />
+    <Resource Include="Pics\Shop Items\arrowButton.png" />
+    <Resource Include="Pics\Shop Items\Blizzard.png" />
+    <Resource Include="Pics\Shop Items\CounterAttack.png" />
+    <Resource Include="Pics\Shop Items\CureAll.png" />
+    <Resource Include="Pics\Shop Items\dark.png" />
+    <Resource Include="Pics\Shop Items\drain.png" />
+    <Resource Include="Pics\Shop Items\Earth.png" />
+    <Resource Include="Pics\Shop Items\FallenAngels.png" />
+    <Resource Include="Pics\Shop Items\fire.png" />
+    <Resource Include="Pics\Shop Items\GunSlinger.png" />
+    <Resource Include="Pics\Shop Items\Heal.png" />
+    <Resource Include="Pics\Shop Items\HealthPotion.png" />
+    <Resource Include="Pics\Shop Items\HolyWater.png" />
+    <Resource Include="Pics\Shop Items\ice.png" />
+    <Resource Include="Pics\Shop Items\Inferno.png" />
+    <Resource Include="Pics\Shop Items\Lightning.png" />
+    <Resource Include="Pics\Shop Items\ManaPotion.png" />
+    <Resource Include="Pics\Shop Items\Poison.png" />
+    <Resource Include="Pics\Shop Items\Quake.png" />
+    <Resource Include="Pics\Shop Items\Scan.png" />
+    <Resource Include="Pics\Shop Items\shield.png" />
+    <Resource Include="Pics\Shop Items\Thunder.png" />
+    <Resource Include="Pics\Shop Items\XPotion.png" />
+    <Resource Include="Pics\shop.png" />
+    <Resource Include="Pics\soundOff.png" />
+    <Resource Include="Pics\SoundOn.png" />
+    <Resource Include="Pics\SpiritAttack\SpiritAttack2Comet.png" />
+    <Resource Include="Pics\SpiritAttack\SpiritAttack3.png" />
+    <Resource Include="Pics\SpiritAttack\SpiritAttack4.png" />
+    <Resource Include="Pics\TalkingBox1.png" />
+    <Resource Include="Pics\Towns\Andion.png" />
+    <Resource Include="Pics\Towns\Eggnon.png" />
+    <Resource Include="Pics\Towns\Gurdain Fortress.png" />
+    <Resource Include="Pics\Towns\Obar.png" />
+    <Resource Include="Pics\Towns\The Fallen.png" />
+    <Resource Include="Pics\Towns\The Lost.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\ChurchObar.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\Hotel.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\hotelObar.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\House1Obar.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\House2Obar.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\House3Obar.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\House4Obar.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\MasterAdalmun.png" />
+    <Resource Include="Pics\Towns\Walking in Obar_Images\ObarWaterWell.png" />
+    <Resource Include="Pics\Towns\WalkingAndion\AndionBackground.png" />
+    <Resource Include="Pics\Towns\WalkingAndion\ChurchAndion.png" />
+    <Resource Include="Pics\Towns\WalkingAndion\House1Andion.png" />
+    <Resource Include="Pics\Towns\WalkingAndion\House2Andion.png" />
+    <Resource Include="Pics\Towns\WalkingAndion\House3Andion.png" />
+    <Resource Include="Pics\Towns\WalkingAndion\House4Andion.png" />
+    <Resource Include="Pics\Towns\WalkingEggnon\EggnonChurch.png" />
+    <Resource Include="Pics\Towns\WalkingEggnon\EggnonHotel.png" />
+    <Resource Include="Pics\Towns\WalkingEggnon\EggnonShop.png" />
+    <Resource Include="Pics\Towns\WalkingEggnon\House1Eggnon.png" />
+    <Resource Include="Pics\Towns\WalkingEggnon\House2Eggnon.png" />
+    <Resource Include="Pics\VIIVoices.png" />
+    <Resource Include="Pics\ZombieCreature1.png" />
+    <Resource Include="Scene 10_Images\Layer 1.png" />
+    <Resource Include="Scene 10_Images\Layer 2.png" />
+    <Resource Include="Scene 10_Images\sky.png" />
+    <Resource Include="Scene 10_Images\Vector Smart Object.png" />
+    <Resource Include="Scene 11_Images\Shape 2.png" />
+    <Resource Include="Scene 9_Images\boat.png" />
+    <Resource Include="Scene 9_Images\deck.png" />
+    <Resource Include="Scene 9_Images\Layer 1.png" />
+    <Resource Include="Scene 9_Images\village.png" />
+    <Resource Include="Scene 9_Images\Waves.png" />
+    <Resource Include="Scene4_Images\Bullet.png" />
+    <Resource Include="Scene4_Images\Pat.png" />
+    <Resource Include="Scene4_Images\Vector Smart Object.png" />
+    <Resource Include="Scene5_Images\Vector Smart Object.png" />
+    <Resource Include="Scene5_Images\Vector Smart Object1.png" />
+    <Resource Include="Scene5_Images\Vector Smart Object2.png" />
+    <Resource Include="SpiritBarColor_Images\RageBox.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1 copy 2.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1 copy 3.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1 copy 4.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1 copy 5.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1 copy 6.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1 copy.png" />
+    <Resource Include="SpiritBarColor_Images\Shape 1.png" />
+    <Resource Include="Walking in the World_Images\c1.png" />
+    <Resource Include="Walking in the World_Images\c2.png" />
+    <Resource Include="Walking in the World_Images\c3.png" />
+    <Resource Include="Walking in the World_Images\grass.png" />
+    <Resource Include="Walking in the World_Images\grass1.png" />
+    <Resource Include="Walking in the World_Images\grass2.png" />
+    <Resource Include="Walking in the World_Images\grass3.png" />
+    <Resource Include="Walking in the World_Images\Hill.png" />
+    <Resource Include="Walking in the World_Images\sky.png" />
+    <Resource Include="Walking in the World_Images\VII1.png" />
+    <Resource Include="Walking in the World_Images\VII2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pics\text\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\WindowsPhone\v7.0\Microsoft.Expression.Blend.WindowsPhone.targets" />
+</Project>

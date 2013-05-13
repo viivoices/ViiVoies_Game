@@ -1,0 +1,1630 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+    x:Class="myBuddies.HomeScreen"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded" Background="#FF111111" Unloaded="PhoneApplicationPage_Unloaded" BackKeyPress="PhoneApplicationPage_BackKeyPress">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="storyIntro" Completed="storyIntro_Completed">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackGround">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="0.32"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8.5" Value="0.12"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9.9" Value="0.76"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.3" Value="0.05"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12.8" Value="0.7"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:14.3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15.6" Value="0.81"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:26.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="button">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="txtPlay">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.700073"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1.617"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0" To="71" Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="txtPlay" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0.750061"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="2.088"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-0.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtPlay">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Begin Journey"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:5" Value="Play"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyConvo1" Completed="storyConvo1_Completed">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss2">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0.99"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab1convo1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene0_5" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene0_5">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab2convo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="student2Pat">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2Pat">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Student1John">
+				<DiscreteObjectKeyFrame KeyTime="0:0:4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1John">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="17"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:6">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyConvo2" Completed="storyConvo2_Completed">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab2Canvo2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab1convo2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:4" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="txtContinue" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:4" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="nextArrow" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:4" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="txtContinue" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-6"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="15"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="-6"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="student2Pat">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2Pat">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Student1John">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1John">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene0_5">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene0_5" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab1convo2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="And you know that how? By childish stories people speak? There have been many including myself who have lost loved ones on faith that those faerie tale stories are true.  I curse those stories. They are nothing but lies. "/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab2Canvo2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="What's wrong with you? You're acting strange. I thought you believed in the Project, the Service, the Church?  The World has fallen into dark times and we need him to..."/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Style x:Key="ButtonStyle1" TargetType="Button">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid>
+							<Image x:Name="nextButton" RenderTransformOrigin="0.5,0.5" Source="Pics/Shop Items/arrowButton.png" Stretch="Fill" UseLayoutRounding="False" d:LayoutRounding="Auto">
+								<Image.RenderTransform>
+									<CompositeTransform Rotation="-90"/>
+								</Image.RenderTransform>
+							</Image>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Storyboard x:Name="storyPlayButton" RepeatBehavior="1x">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0.25"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:10" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12" Value="0.25"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:14" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:16" Value="0.25"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:18" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:20" Value="0.25"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:22" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:24" Value="0.245"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:26" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:28" Value="0.245"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:30" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:32" Value="0.25"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:34" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:37" Value="0.25"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:39" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyPlayButtonIsDown" Completed="storyPlayButtonIsDown_Completed">
+			<DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtPlay" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.7"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="txtPlay">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.75"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyConvo3">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab1convo3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab1convo3">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="...To prove his powers. Take away the darkness.  There will always be darkness no matter what.      "/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab2Canvo3">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="txtContinue" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="nextArrow" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="btnNext" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="txtContinue" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="16"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="btnNext" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="student2Pat">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2Pat">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Student1John">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1John">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene0_5" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene0_5">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab2Canvo3">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Yes, darkness will always exsist, but there will also always be light. It's always easier to see in the light than it is in the dark."/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyConvo4">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab1convo4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab2Canvo4">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab2Canvo4">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.1" Value="Yes your vision does adjust, but it's still easy to be mistaken by an objects form. You're speaking like one of those fallen members...  "/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="txtContinue" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:3" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="txtContinue" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="student2Pat">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2Pat">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Student1John">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.6">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1John">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.3" Value="12.949"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene0_5">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene0_5" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1Convo1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.9" Value="15.972"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12.4" Value="0.993"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:11">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5" Value="Hello, my name is Dr.Nicodemus. Let me start off by congratulating you two on getting a perfect score on the Medica exam. This task has only been accomplished 11 times since the opening of the University 100 years ago. So I welcome you, and yes, I am one of the 11. Two in one year is simply amazing."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1Convo2">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="15.972"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.4" Value="0.993"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Student 1"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="It's a pleasure to meet you Dr. Nicodemus. My Name is John. This feels like a dream standing next to VII Voices. I know he will bring joy to the World."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Student1John">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1John">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1Convo3">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="22.94"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="I can sense your faith John, it's strong. As the prophecy says, VII Voices will deliver us from evil and bring joy to us all. After much waiting, God has finally said it is time to bring VII Voices back to life. He will though be weak and his powers be limited. We still have a lot of work to develop VII Voices to the powers that a chosen Voices should have."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1Convo4">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="This makes no sense! If he brings peace why are people dieing because of him? Why is God allowing us to suffer when he could have brought him back to life a long time ago? "/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Student 2"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="Student 2"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:4" Value="Student 2 - Pat"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLabAss1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.2" Value="Student 1 - John"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss1">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab1convo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.2" Value="Pat shut up! "/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab1convo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0.965"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="17.901"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1.901"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2PatBottomScreen">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1JohnTopScreen">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1Convo5">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="18"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.6" Value="Student 1 - Pat"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2PatBottomScreen">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="Only God has the answer. We couldn't even begin to comprehend the thoughts of God because his mind is hundred times over all the people of this land."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="Only God has the answer. We couldn't even begin to comprehend the thoughts of God because his mind is hundred times over all the people of this land."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.6" Value="Well, I can comprehend it. I can comprehend the fact my family have lost their lives over this.  I can comprehend that in the Book Of The Guardians God appeared to the land and spoke to the people, “My children, I am God of the Guardians. I am the God that can give you all love, hope, and peace.  Follow me and do as I say.” apparently he lied about the love, hope, and peace."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1Convo6">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="I'm sorry about your family Pat. God has a plan for them. That plan is still unknown to you, but one day you will understand. God works in mysterious ways. Times like these, we must have God in our hearts.    With that said, lets begin the process."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="24"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="Student 1 - Pat"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="...(Sigh)"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="student2PatBottomScreen">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="sceneTxtConvo2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="-1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene2">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackGround">
+				<EasingDoubleKeyFrame KeyTime="0:0:13" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.5" Value="0.095"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:14" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene2">
+				<EasingDoubleKeyFrame KeyTime="0:0:13" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.5" Value="0.095"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:14" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15" Value="0.1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:16" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:7" Value="Student 1- John"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:8" Value="Student 1- John"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:11.5" Value="Student 1- John"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:12" Value="Student 1- John"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:15" Value="Dr. Nicodemus"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:7" Value="I can hear him breathing..."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:8" Value="I can hear him breathing..."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:11.5" Value="I can hear him breathing..."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:12" Value="I can hear him breathing..."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:15" Value="VII Voices, my name is Dr. Nicodemus. We ask for your assistance.  The prophecy says you are the one who will help us. But for now, you must rest. For tomorrow, we begin developing your powers."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15.5" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:19">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:19" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:20" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:19" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:20" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:19" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:19.5" Value="23"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:20" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1JohnTopScreen">
+				<EasingDoubleKeyFrame KeyTime="0:0:7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:12" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0:0:15" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:15.5" Value="0.995"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene1_1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene1_1">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:3" Value="Alright. This is one of the most potent revive potions ever created. He shall be awaken quickly."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Scene1_1">
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9.6" Value="225.737"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Scene1_1">
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9.6" Value="-3"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:9.6">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:9.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:10.5" Value="0.99"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:9.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:10.5" Value="0.99"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:9.6" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:10" Value="21"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:10.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene1_1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:5">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene3">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene3">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5.1" Value="Dr. Nicodemus"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5.1" Value="Quick Pat hit the alarm behind you.."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo2">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox2">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.6" Value="0.8"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt2">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:7.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:7.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8.1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="Student 2 - John"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="Student 2 - John"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:3" Value="Student 2 - John"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="AHHH!"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="AHHH!"/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:3" Value="AHHH!"/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Student1JohnTopScreen">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:5.1" To="10" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Dr_Nicodemes" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:5.1" To="317" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Dr_Nicodemes" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ellipse">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5.1">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:5.1" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ellipse" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:5.1" To="13" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ellipse" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:5.1" To="5" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ellipse" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="storyScene3_1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Bullet">
+				<EasingDoubleKeyFrame KeyTime="0" Value="654"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="-256.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="1.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.1" Value="-360"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Bullet">
+				<EasingDoubleKeyFrame KeyTime="0" Value="27"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="30"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="-7.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.1" Value="-4.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Bullet">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="BackGround">
+				<EasingColorKeyFrame KeyTime="0" Value="#FF5B5B5C"/>
+				<EasingColorKeyFrame KeyTime="0:0:4" Value="#FF5B5B5C"/>
+			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackGround">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.2" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Vector_Smart_Object">
+				<EasingDoubleKeyFrame KeyTime="0:0:4.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Pat">
+				<EasingDoubleKeyFrame KeyTime="0:0:4.2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Pat">
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="-111"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.1" Value="-153"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Pat">
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="-76.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:13.1" Value="-108"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="Pat">
+				<EasingDoubleKeyFrame KeyTime="0:0:4.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:11" Value="-3.637"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene3_1">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:13.2">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:13.4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:13.4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:16" Value="0.595"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:13.4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:16" Value="0.595"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Bullet">
+				<DiscreteObjectKeyFrame KeyTime="0:0:4">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:4.6">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene4">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Scene4">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:8">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Vector_Smart_Object3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Vector_Smart_Object1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Vector_Smart_Object2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="86"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Vector_Smart_Object2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="-1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Vector_Smart_Object2">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FireBall">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="FireBall">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="31"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="-258.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-318.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="-390.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="FireBall">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="7"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="-91.5"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-126"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="-152"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="FireBall">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1.296"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1.531"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="FireBall">
+				<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="2.051"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="3.128"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Vector_Smart_Object1">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-54"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="-126"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Vector_Smart_Object1">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-38"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="-64"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="Vector_Smart_Object1">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="-31.242"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:8">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="btnNext">
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:8.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene4_1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene4_1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTalkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.805"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneNameOfPersonTalkTxt1">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="sceneTxtConvo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="Please Help us. VII Voices please we need you. The fallen have come..."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="sceneTxtConvo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="FireBall2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1125.25"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="FireBall2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="485"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FireBall2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="FireBall2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="2.232"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="FireBall2">
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="1.957"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Scene4_1">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="336.25"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Scene4_1">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="112"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="Scene4_1">
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="37.383"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Dr_Nicodemes">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="storyScene5">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Scene5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Armgrab">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.2">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="FallenMerc1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="-198"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="FallenMerc1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="130.5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLabAss1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5.5" Value="Fallen Soldier"/>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="txtLab1convo1">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5.5" Value="Ah, The one they call VII Voices It would be a pleasure to kill you but I have specific orders not too. Some one special wants to see you. You fool, put your hand down your weak you have no powers."/>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="talkBox1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLabAss1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtLab1convo1">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="0.795"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnNext">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5.5">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="txtContinue">
+				<EasingDoubleKeyFrame KeyTime="0:0:6.1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="nextArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:5.9" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Gun">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Armgrab">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="-3.472"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-73.472"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Armgrab">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="2.536"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-88.464"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ArmClose">
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.7">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="ArmClose">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="-7"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="-27.212"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="70.356"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="ArmClose">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.7" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="-21.069"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="58.48"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Gun">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="74"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Gun">
+				<EasingDoubleKeyFrame KeyTime="0:0:2.8" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="91"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:2.7" To="-33.249" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="Armgrab" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:2.7" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Armgrab" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rightHandGun">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Armgrab2">
+				<DiscreteObjectKeyFrame KeyTime="0:0:5">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FallenSolderFace">
+				<EasingDoubleKeyFrame KeyTime="0:0:5.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+    			<GradientStop Color="Black" Offset="1"/>
+    			<GradientStop Color="White" Offset="1"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <MediaElement Grid.Row="1" Height="48" HorizontalAlignment="Left" Margin="8,321,0,0" x:Name="me" VerticalAlignment="Top" Width="51" IsHitTestVisible="False" MediaOpened="me_MediaOpened" AutoPlay="False" MediaEnded="me_MediaEnded" />
+        <Rectangle x:Name="BackGround" Fill="#FFF4F4F5" Margin="-2,-1,0,-2" Grid.RowSpan="2" Stroke="Black" Opacity="0"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Margin="135,70,0,0" Grid.Row="1" Source="Pics/2ndSpells/CureAllAngel.png" Stretch="Fill" Width="39" Height="36" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Opacity="0">
+        	<Image.RenderTransform>
+        		<CompositeTransform/>
+        	</Image.RenderTransform>
+        </Image>
+        <TextBlock x:Name="txtPlay" Height="71" Margin="2,158,3,0" Grid.Row="1" TextWrapping="Wrap" Text="Begin Journey" VerticalAlignment="Top" FontSize="64" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Opacity="0" Foreground="#FFF7F7F7">
+        	<TextBlock.RenderTransform>
+        		<CompositeTransform/>
+        	</TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="txtVIIVoices" Height="29" Margin="0,4,4,0" Grid.Row="1" TextWrapping="Wrap" Text="VII Voices" VerticalAlignment="Top" FontSize="32" TextAlignment="Center" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" HorizontalAlignment="Right" Width="164" Foreground="#FF696868" Visibility="Collapsed"/>
+        <Image x:Name="Scene0_5" Margin="0,-1,0,1" Source="Pics/CutScenes/Scene0.5.png" Stretch="Fill" Grid.RowSpan="2" Opacity="0" Visibility="Collapsed"/>
+        <Image x:Name="Scene1" Margin="0" Grid.Row="1" Source="Pics/CutScenes/Scene1.png" Stretch="Fill" Opacity="0"/>
+        <Image x:Name="Scene1_1" HorizontalAlignment="Right" Margin="0,189,2,127" Grid.Row="1" Source="Pics/CutScenes/Scene1.1.png" Stretch="Fill" Width="217" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+        	<Image.RenderTransform>
+        		<CompositeTransform/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="Scene2" HorizontalAlignment="Right" Margin="0,182.75,8,-0.75" Grid.Row="1" Source="Pics/CutScenes/Scene2.png" Stretch="Fill" Width="230" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Opacity="0">
+        	<Image.RenderTransform>
+        		<CompositeTransform Rotation="0.667"/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="Scene3" Margin="0,2,0,-2" Grid.Row="1" Source="Pics/CutScenes/Scene3.png" Stretch="Fill" Opacity="0"/>
+        <Canvas x:Name="Scene3_1" Clip="M0,0L800,0 800,480 0,480z" HorizontalAlignment="Left" Height="480" UseLayoutRounding="False" VerticalAlignment="Top" Width="800" Visibility="Collapsed">
+        	<Image x:Name="Vector_Smart_Object" Height="480" Canvas.Left="-10" Source="Scene4_Images/Vector Smart Object.png" Canvas.Top="0" Width="813" Opacity="0"/>
+        	<Image x:Name="Bullet" Height="8" Canvas.Left="165" Source="Scene4_Images/Bullet.png" Canvas.Top="201" Width="19" RenderTransformOrigin="0.5,0.5" Opacity="0">
+        		<Image.RenderTransform>
+        			<CompositeTransform/>
+        		</Image.RenderTransform>
+        	</Image>
+        	<Image x:Name="Pat" Height="328" Canvas.Left="95" Source="Scene4_Images/Pat.png" Canvas.Top="62" Width="249" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        		<Image.RenderTransform>
+        			<CompositeTransform/>
+        		</Image.RenderTransform>
+        	</Image>
+        </Canvas>
+        <Canvas x:Name="Scene4" Clip="M0,0L800,0 800,480 0,480z" HorizontalAlignment="Left" Height="480" UseLayoutRounding="False" VerticalAlignment="Top" Width="800" Visibility="Collapsed">
+        	<Image x:Name="Vector_Smart_Object3" Height="52" Canvas.Left="334" Source="Scene5_Images/Vector Smart Object2.png" Canvas.Top="113" Width="52" Opacity="0"/>
+        	<Image x:Name="Vector_Smart_Object1" Height="213" Canvas.Left="360" Source="Scene5_Images/Vector Smart Object.png" Canvas.Top="101" Width="108" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        		<Image.RenderTransform>
+        			<CompositeTransform/>
+        		</Image.RenderTransform>
+        	</Image>
+        	<Image x:Name="FireBall" Height="86.822" Canvas.Left="661.909" Source="Pics/FireBall.png" Stretch="Fill" Canvas.Top="245.589" Width="102.682" RenderTransformOrigin="0.5,0.5" Opacity="0">
+        		<Image.RenderTransform>
+        			<CompositeTransform Rotation="-96.8"/>
+        		</Image.RenderTransform>
+        	</Image>
+        	<Image x:Name="Vector_Smart_Object2" Height="97" Canvas.Left="716" Source="Scene5_Images/Vector Smart Object1.png" Canvas.Top="250" Width="128" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        		<Image.RenderTransform>
+        			<CompositeTransform/>
+        		</Image.RenderTransform>
+        	</Image>
+        </Canvas>
+        <Image x:Name="Scene5" Margin="1,2,-1,-2" Grid.Row="1" Source="Pics/CutScenes/Scene5.png" Stretch="Fill" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        	<Image.RenderTransform>
+        		<CompositeTransform/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="Scene4_1" HorizontalAlignment="Right" Margin="0,154,0,0" Grid.Row="1" Source="Pics/CutScenes/Scene4.1.png" Stretch="Fill" Width="226" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        	<Image.RenderTransform>
+        		<CompositeTransform/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="Gun" HorizontalAlignment="Left" Height="43.878" Margin="213.763,0,0,12.061" Grid.Row="1" Source="Pics/Gun.png" Stretch="Fill" VerticalAlignment="Bottom" Width="63.474" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Opacity="0">
+        	<Image.RenderTransform>
+        		<CompositeTransform Rotation="-28.06"/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="Armgrab" Height="120" Margin="298,0,0,-133.5" Grid.Row="1" Source="Pics/Armgrab.png" Stretch="Fill" VerticalAlignment="Bottom" Visibility="Collapsed" RenderTransformOrigin="0.469,0.441" HorizontalAlignment="Left" UseLayoutRounding="False" Width="81" d:LayoutRounding="Auto">
+        	<Image.RenderTransform>
+        		<CompositeTransform Rotation="-33.249" TranslateX="-3.472" TranslateY="2.536"/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="rightHandGun" Height="100" Margin="0,0,287,0" Grid.Row="1" Source="Pics/FirstPersonGunView2.png" Stretch="Fill" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="69" Visibility="Collapsed"/>
+        <Image x:Name="Armgrab2" Height="102" Margin="351,0,385,-2" Grid.Row="1" Source="Pics/Armgrab.png" Stretch="Fill" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+        <Image x:Name="ArmClose" HorizontalAlignment="Left" Height="125.254" Margin="238.309,0,0,-57.551" Grid.Row="1" Source="Pics/ArmgrabClose.png" Stretch="Fill" VerticalAlignment="Bottom" Width="69" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Visibility="Collapsed">
+        	<Image.RenderTransform>
+        		<CompositeTransform Rotation="-35.565"/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="FallenMerc1" HorizontalAlignment="Right" Height="271" Margin="0,-123,-148,0" Grid.Row="1" Source="Pics/Enemies/FallenMerc1.png" Stretch="Fill" VerticalAlignment="Top" Width="144" RenderTransformOrigin="0.5,0.5">
+        	<Image.RenderTransform>
+        		<CompositeTransform/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="FireBall2" HorizontalAlignment="Left" Margin="-209,-127,0,-67" Source="Pics/FireBall.png" Stretch="Fill" Width="192" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Opacity="0">
+        	<Image.RenderTransform>
+        		<CompositeTransform Rotation="80.902"/>
+        	</Image.RenderTransform>
+        </Image>
+    	<Image x:Name="talkBox1" Margin="-39,2,-3,0" Grid.Row="1" Source="Pics/TalkingBox1.png" Stretch="Fill" Height="221" VerticalAlignment="Top" Opacity="0"/>
+    	<TextBlock x:Name="txtLabAss1" Height="33" Margin="3,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Student 1" VerticalAlignment="Top" Foreground="White" FontSize="21.333" FontWeight="Bold" FontFamily="Georgia" FontStyle="Italic" TextDecorations="Underline" HorizontalAlignment="Left" Width="184" Opacity="0"/>
+    	<TextBlock x:Name="txtLab1convo1" Height="169" Margin="77,29,9,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" Text="So, this is VII Voices? This is the reason for the war? The reason why many people have lost their lives? Hey You! If you can hear me, I want you to know that your the reason why I go home to an empty house every night.  " FontSize="24" Foreground="Black" Opacity="0"/>
+        <TextBlock x:Name="txtLab1convo2" Margin="93,26,-7,0" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" Text="And you know that how? By childish stories people speak? Their have been many including myself who have lost loved ones on faith that those faerie tale stories are true.  I curse those stories. They are nothing but lies. " FontSize="24" Height="146" VerticalAlignment="Top" Opacity="0" Foreground="Black"/>
+        <TextBlock x:Name="txtLab1convo3" Margin="77,34,9,0" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Height="132" VerticalAlignment="Top" Text="          " Opacity="0" Foreground="Black"/>
+        <TextBlock x:Name="txtLab1convo4" Margin="87,26,9,0" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Height="132" VerticalAlignment="Top" Text="As time passes your vision will adjust to the dark.  Your vision becomes clearer and it becomes easier to see." Opacity="0" Foreground="Black"/>
+    	<TextBlock x:Name="txtContinue" HorizontalAlignment="Right" Height="46" Margin="0,185,20,0" Grid.Row="1" TextWrapping="Wrap" Text="Continue" VerticalAlignment="Top" Width="152" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" FontSize="32" TextAlignment="Center" Opacity="0" RenderTransformOrigin="0.5,0.5">
+    		<TextBlock.Foreground>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="Black" Offset="0"/>
+    				<GradientStop Color="White"/>
+    			</LinearGradientBrush>
+    		</TextBlock.Foreground>
+    		<TextBlock.RenderTransform>
+    			<CompositeTransform/>
+    		</TextBlock.RenderTransform>
+    	</TextBlock>
+    	<Image x:Name="talkBox2" Margin="-39,0,-24,-35" Grid.Row="1" Source="Pics/TalkingBox1.png" Stretch="Fill" Opacity="0" Height="209" VerticalAlignment="Bottom"/>
+    	<TextBlock x:Name="txtLabAss2" Height="39" Margin="0,0,0,134" Grid.Row="1" TextWrapping="Wrap" Text="Student 2" VerticalAlignment="Bottom" FontFamily="Georgia" FontSize="21.333" Foreground="White" FontWeight="Bold" TextDecorations="Underline" Opacity="0" FontStyle="Italic" HorizontalAlignment="Left" Width="203"/>
+    	<TextBlock x:Name="txtLab2convo1" Margin="83,0,4,14" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Text="This war has been going on way before any Voices were ever called upon. This is VII Voices the one that shall end suffering and bring normality back to this World." Foreground="Black" Opacity="0" Height="132" VerticalAlignment="Bottom"/>
+    	<TextBlock x:Name="txtLab2Canvo2" Margin="93,0,-1,14" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Foreground="Black" Text="What's a matter with you? You're acting strange. I thought you believed in the Project, the Service, the Church?  The World has fallen into dark times and we need him to..." Opacity="0" Height="132" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="txtLab2Canvo3" Margin="77,0,4,14" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Foreground="Black" Text="Yes their will always be darkness but their will also always be light. It's always easier to see in the light than it is in the dark." Opacity="0" Height="132" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="txtLab2Canvo4" Margin="87,0,0,14" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Foreground="Black" Text="Yes your vision does adjust, but it's still easy to be mistaken by an objects form. You're speaking like one of those fallen members...  " Opacity="0" Height="132" VerticalAlignment="Bottom"/>
+        <Image x:Name="sceneTalkBox1" Margin="-118,0,2,0" Grid.Row="1" Source="Pics/TalkingBox1.png" Stretch="Fill" Height="229" VerticalAlignment="Top" Opacity="0"/>
+        <TextBlock x:Name="sceneNameOfPersonTalkTxt1" Height="26" Margin="1,-2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dr. Nicodemus" VerticalAlignment="Top" FontFamily="Georgia" FontSize="21.333" Foreground="White" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Left" Width="214" Opacity="0" FontStyle="Italic"/>
+        <TextBlock x:Name="sceneTxtConvo1" Margin="83,19,20,0" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="22.667" Foreground="Black" Height="155" VerticalAlignment="Top" Opacity="0"/>
+    	<Image x:Name="nextArrow" HorizontalAlignment="Right" Margin="0,205.5,71.5,216.5" Grid.Row="1" Source="Pics/Shop Items/arrowButton.png" Stretch="Fill" Width="39" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Opacity="0">
+    		<Image.RenderTransform>
+    			<CompositeTransform Rotation="-90"/>
+    		</Image.RenderTransform>
+    	</Image>
+    	<Button x:Name="btnNext" Content="Button" HorizontalAlignment="Right" Margin="0,192,2,194" Grid.Row="1" Width="175" Opacity="0" BorderBrush="Black" Click="btnNext_Click" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed" >
+    		<Button.RenderTransform>
+    			<CompositeTransform/>
+    		</Button.RenderTransform>
+    	</Button>
+        <Image x:Name="sceneTalkBox2" Margin="-110,0,-6,-35" Grid.Row="1" Source="Pics/TalkingBox1.png" Stretch="Fill" Height="229" VerticalAlignment="Bottom" Opacity="0"/>
+        <TextBlock x:Name="sceneNameOfPersonTalkTxt2" Height="39" Margin="3,0,0,158" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" FontFamily="Georgia" FontSize="24" Foreground="#FFFFFEFE" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Left" Width="266" Opacity="0" FontStyle="Italic"/>
+        <TextBlock x:Name="sceneTxtConvo2" Grid.Row="1" TextWrapping="Wrap" FontFamily="Arial" FontSize="24" Text="This makes no sense! If he's a powerful being why can't he awaken himself?  If he brings peace why are we fighting this war because of him? " Foreground="Black" Height="173" VerticalAlignment="Bottom" Margin="66,0,2,0" Opacity="0" RenderTransformOrigin="0.5,0.5">
+        	<TextBlock.RenderTransform>
+        		<CompositeTransform/>
+        	</TextBlock.RenderTransform>
+        </TextBlock>
+        <Button x:Name="button" Content="Play" Margin="273,150,273,0" Grid.Row="1" BorderThickness="0" BorderBrush="White" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" FontSize="48" Click="Button_Click" Height="87" VerticalAlignment="Top" Opacity="0" MouseEnter="button_MouseEnter" MouseLeave="button_MouseLeave" Foreground="White" />
+        <Image x:Name="student2Pat" HorizontalAlignment="Left" Height="81" Margin="0,28,0,0" Grid.Row="1" Source="Pics/Characters/student2Pat.png" Stretch="Fill" VerticalAlignment="Top" Width="89" Opacity="0" Visibility="Collapsed"/>
+        <Image x:Name="Student1John" HorizontalAlignment="Left" Height="87" Margin="-1,0,0,59" Grid.Row="1" Source="Pics/Characters/Student1John.png" Stretch="Fill" VerticalAlignment="Bottom" Width="93" Opacity="0" Visibility="Collapsed"/>
+        <Image x:Name="Dr_Nicodemes" HorizontalAlignment="Left" Margin="0.873,20.382,0,0" Grid.Row="1" Source="Pics/CutScenes/Scene2.png" Stretch="Fill" Width="79.6" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="92.69" VerticalAlignment="Top" Opacity="0">
+        	<Image.RenderTransform>
+        		<CompositeTransform Rotation="0.667"/>
+        	</Image.RenderTransform>
+        </Image>
+        <Image x:Name="student2PatBottomScreen" HorizontalAlignment="Left" Height="81" Margin="-8,0,0,82" Grid.Row="1" Source="Pics/Characters/student2Pat.png" Stretch="Fill" VerticalAlignment="Bottom" Width="94" Opacity="0"/>
+        <Image x:Name="Student1JohnTopScreen" HorizontalAlignment="Left" Height="87" Margin="-2,19,0,0" Grid.Row="1" Source="Pics/Characters/Student1John.png" Stretch="Fill" VerticalAlignment="Top" Width="93" Opacity="0"/>
+        <Image x:Name="FallenSolderFace" HorizontalAlignment="Left" Margin="3,29,0,0" Grid.Row="1" Source="Pics/Characters/FallenMerc1.png" Stretch="Fill" Width="74" Height="70" VerticalAlignment="Top" Opacity="0"/>
+        <Ellipse x:Name="ellipse" Fill="Black" HorizontalAlignment="Left" Height="7" Margin="25,0,0,104" Grid.Row="1" Stroke="Black" VerticalAlignment="Bottom" Width="14" Opacity="0" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5">
+        	<Ellipse.RenderTransform>
+        		<CompositeTransform/>
+        	</Ellipse.RenderTransform>
+        </Ellipse>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Left" Height="63" Margin="-13,0,0,-8" Grid.Row="1" VerticalAlignment="Bottom" Width="130" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" BorderThickness="0" Foreground="#FF696868" FontSize="32" BorderBrush="Black" Click="btnAbout_Click" Background="Transparent" Visibility="Collapsed" />
+        <Button x:Name="btnNewGame" Content="New Game" Height="81" Margin="321,0,287,-19" Grid.Row="1" VerticalAlignment="Bottom" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" FontSize="32" BorderThickness="0" Foreground="#FF696868" Click="btnNewGame_Click" Visibility="Collapsed" Background="Transparent" />
+        <Canvas x:Name="canvasNewGame" Margin="106,128,97,82" Grid.Row="1" Background="Black" Visibility="Collapsed">
+        	<TextBlock x:Name="txtStartingNewGame" Height="154" TextWrapping="Wrap" Text="Starting a new game will delete your previous game. Would you like to start a new game? " Width="597" FontSize="32" FontFamily="/myBuddies;component/Fonts/Fonts.zip#Monotype Corsiva" TextAlignment="Center" Foreground="#FFFEFEFE" />
+        	<Button x:Name="btnStartNewGame" Content="Yes!" Height="77" Canvas.Left="6" Canvas.Top="185" Width="184" Click="btnStartNewGame_Click" Foreground="#FFFCFCFC" />
+        	<Button x:Name="btnNoWay" Content="No Way!" Height="77" Canvas.Left="416" Canvas.Top="185" Width="173" Click="btnNoWay_Click" Foreground="#FFEBEBEB" />
+        </Canvas>
+        <Canvas x:Name="canvasLoading" Margin="-15,-11,-15,-5" Grid.RowSpan="2" Background="Black" Visibility="Collapsed">
+        	<TextBlock x:Name="txtLoading" Height="89" Canvas.Left="498" TextWrapping="Wrap" Text="Loading...VII Voices" Canvas.Top="441" Width="375" FontSize="24" TextAlignment="Center"/>
+        </Canvas>
+        <Canvas x:Name="canvasPaused" Margin="138,80,139,126" Grid.Row="1" Visibility="Collapsed">
+        	<Canvas.Background>
+        		<ImageBrush ImageSource="Item_Images/Layer 1.png" Stretch="Uniform"/>
+        	</Canvas.Background>
+        	<TextBlock x:Name="txtPaused" Height="69" TextWrapping="Wrap" Width="334" Foreground="White" Text="Pause" FontFamily="Comic Sans MS" FontSize="48" Canvas.Left="72" Canvas.Top="8" TextDecorations="Underline"/>
+        	<Button x:Name="btnContinue" Content="Resume Game" Height="83" Canvas.Top="113" Width="315" Background="#00000000" BorderBrush="Black" Foreground="White" Click="btnContinue_Click" BorderThickness="0" FontFamily="Comic Sans MS" Canvas.Left="93"/>
+        	<Image Height="45" Source="Pics/2ndSpells/CureAllAngel.png" Stretch="Fill" Width="61" Canvas.Top="32" Canvas.Left="374" RenderTransformOrigin="0.492,0.489"/>
+        </Canvas>
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+    </Grid>
+
+</phone:PhoneApplicationPage>
